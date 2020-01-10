@@ -1,0 +1,52 @@
+﻿<Window x:Class="NBLsystem.Users.Register.RegisterUser"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NBLsystem.Users.Register"
+        xmlns:Controls="clr-namespace:AC.AvalonControlsLibrary.Controls;assembly=AvalonControlsLibrary"
+        mc:Ignorable="d"
+        Title="NBL Cadastro de Usuário- INNOVA PPF. COM. E SERV. EIRELLI-ME" Height="458.857" Width="676.033" WindowStartupLocation="CenterScreen">
+    <Canvas Margin="0,0,0,114.857">
+        <Label x:Name="label1" Content="Sistema de Automação Industrial - NBL System - Licenciado para INNOVA PPF. COM. E SERV. EIRELLI-ME" FontSize="8" Width="668.033" HorizontalContentAlignment="Center" Canvas.Top="403.36" HorizontalAlignment="Center"/>
+        <Image x:Name="image" Source="/NBLsystem;component/Users/Login/LOGO-NBL.png" Height="89" Canvas.Left="24" Canvas.Top="32.5"/>
+        <Label x:Name="label" Content="Register" HorizontalAlignment="Left" FontSize="24" Width="548" Height="89" HorizontalContentAlignment="Right" VerticalContentAlignment="Center" Canvas.Top="34" Canvas.Left="10"/>
+        <GroupBox x:Name="groupBox" Header="Informações para cadastro" Canvas.Left="10" Canvas.Top="157" Height="237.86" Width="648.033">
+            <Grid Margin="0,12.36,-2,-22.96" Height="225.5" VerticalAlignment="Top">
+                <TextBox x:Name="tb_nome" Height="23" Margin="268,2.04,47.033,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <TextBox x:Name="tb_usuario" Height="23" Margin="268,30.04,47.033,0" TextWrapping="Wrap" VerticalAlignment="Top"/>
+                <PasswordBox x:Name="tb_senha" HorizontalAlignment="Left" Margin="268,58,0,0" VerticalAlignment="Top" Width="323" Height="23"/>
+                <Controls:MaskedTextBox  Height="23" HorizontalAlignment="Left" Margin="268,86,0,116.5" Mask="000.000.000-00" x:Name="tb_cpf" Width="323"/>
+                <ComboBox x:Name="cb_permissao" Margin="268,114,47,0" VerticalAlignment="Top">
+                    <ComboBoxItem IsEnabled="false">Administrador</ComboBoxItem>
+                    <ComboBoxItem>Usuário</ComboBoxItem>
+                    <ComboBoxItem>Visitante</ComboBoxItem>
+                </ComboBox>
+                <Button x:Name="button" Content="Cadastrar" Margin="268,141,47,64.5" Click="button_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="#FFB4E0FF" Offset="0"/>
+                            <GradientStop Color="#FF2481C1" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Button x:Name="button1" Content="Voltar" Margin="268,0,47,39.5" VerticalAlignment="Bottom" Click="button1_Click">
+                    <Button.Background>
+                        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                            <GradientStop Color="White" Offset="0"/>
+                            <GradientStop Color="#FF9E7575" Offset="1"/>
+                        </LinearGradientBrush>
+                    </Button.Background>
+                </Button>
+                <Label x:Name="label2" Content="Nome:" HorizontalAlignment="Left" Margin="47,2.04,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.535,0.268"/>
+                <Label x:Name="label2_Copy" Content="Usuário:" HorizontalAlignment="Left" Margin="47,30.04,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label2_Copy1" Content="Senha:" HorizontalAlignment="Left" Margin="47,58.04,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label2_Copy2" Content="CPF:" HorizontalAlignment="Left" Margin="47,86.04,0,0" VerticalAlignment="Top"/>
+                <Label x:Name="label2_Copy3" Content="Permissão:" HorizontalAlignment="Left" Margin="47,114.04,0,0" VerticalAlignment="Top"/>
+                
+
+            </Grid>
+        </GroupBox>
+
+    </Canvas>
+</Window>

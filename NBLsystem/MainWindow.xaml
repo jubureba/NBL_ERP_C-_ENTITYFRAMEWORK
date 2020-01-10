@@ -1,0 +1,47 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NBLsystem"
+        xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="NBLsystem.MainWindow"
+        mc:Ignorable="d"
+        Title="NBL System Solutions - INNOVA PPF. COM. E SERV. EIRELLI-ME" Height="449.762" Width="716.29" VerticalAlignment="Center" HorizontalAlignment="Center" WindowStartupLocation="CenterScreen">
+    <Canvas HorizontalAlignment="Left" Width="708.457" Margin="0,0,-0.167,0.762" RenderTransformOrigin="0.494,0.51">
+        <Menu HorizontalAlignment="Left" VerticalAlignment="Top" Width="708.457">
+            <MenuItem Header="Arquivo">
+                <MenuItem Header="Usuários"/>
+            </MenuItem>
+            <MenuItem Header="Cadastrar">
+                <MenuItem Header="Clientes"/>
+                <MenuItem Header="Fornecedor"/>
+                <MenuItem Header="Estoque"/>
+                <MenuItem Header="Fluxo Diário"/>
+                <MenuItem Header="Contas à Pagar"/>
+                <MenuItem Header="Contas à Receber"/>
+            </MenuItem>
+            <MenuItem Header="Consultar"/>
+            <MenuItem Header="Relatórios"/>
+        </Menu>
+        <Canvas Height="400.04" Canvas.Top="17.96" Width="110.457">
+            <Rectangle Height="32" Width="110.456" Fill="#FF1B78AE"/>
+            <Label x:Name="lblNomeUsuario" Content="nome" Canvas.Left="0.023" Width="110.433" Height="32" VerticalAlignment="Center" HorizontalAlignment="Center" HorizontalContentAlignment="Center" VerticalContentAlignment="Center" Foreground="White"/>
+            <Rectangle Height="32" Width="110.456" Fill="#FF3641B8" Canvas.Top="32"/>
+            <Ellipse Height="22" Width="25.773" Canvas.Left="10" Canvas.Top="37" RenderTransformOrigin="0.473,0.482">
+                <Ellipse.Fill>
+                    <ImageBrush ImageSource="eu.jpg"/>
+                </Ellipse.Fill>
+            </Ellipse>
+            <Rectangle Height="336.04" Width="110.456" Fill="#FF1B78AE" Canvas.Left="0.023" Canvas.Top="64"/>
+            <TabControl TabStripPlacement="Top" Canvas.Top="69" Width="110.456" Height="186.88" Canvas.Left="0.023">
+                <TabItem Header="Tab1" MouseLeftButtonDown="TabItem_MouseLeftButtonDown" />
+                <TabItem Header="Tab2" Height="23.96" VerticalAlignment="Bottom" />
+                <TabItem Header="Tab3" />
+                <TabItem Header="Tab4" />
+            </TabControl>
+        </Canvas>
+
+    </Canvas>
+
+
+</Window>

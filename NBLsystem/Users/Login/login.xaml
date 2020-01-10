@@ -1,0 +1,297 @@
+﻿<Window
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:NBLsystem.Login"
+        xmlns:Custom="clr-namespace:AC.AvalonControlsLibrary.Controls;assembly=AvalonControlsLibrary" 
+        xmlns:gif="http://wpfanimatedgif.codeplex.com" x:Class="NBLsystem.Login.login"
+        mc:Ignorable="d"
+        Title="NBL Login - INNOVA PPF. COM. E SERV. EIRELLI-ME" Height="591" Width="576" WindowStyle="ToolWindow" WindowStartupLocation="CenterScreen">
+    <Window.Resources>
+        <Storyboard x:Key="OpenLogin">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="separator">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="gridLogin">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="gridLogin">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.016"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="gridLogin">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-279.5"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="separator">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-371"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="separator">
+                <EasingDoubleKeyFrame KeyTime="0" Value="3"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="-3"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OpenRegister">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="separator">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="gridRegister">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="gridRegister">
+                <EasingDoubleKeyFrame KeyTime="0" Value="0.018"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="gridRegister">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-279"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="0"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="separator">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-364"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="111.417"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="separator">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-2"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="2"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[0].(ScaleTransform.ScaleX)" Storyboard.TargetName="separator">
+                <EasingDoubleKeyFrame KeyTime="0" Value="1"/>
+                <EasingDoubleKeyFrame KeyTime="0:0:0.3" Value="1.416"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="OpenFacebook">
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="gridNavegadorFacebook">
+                <DiscreteObjectKeyFrame KeyTime="0:0:0.1" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+        </Storyboard>
+        <Storyboard x:Key="Login">
+            <BooleanAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.IsEnabled)" Storyboard.TargetName="button_Copy1">
+                <DiscreteBooleanKeyFrame KeyTime="0" Value="False"/>
+            </BooleanAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(ContentControl.Content)" Storyboard.TargetName="button_Copy1">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="Entrando..."/>
+            </ObjectAnimationUsingKeyFrames>
+            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.Visibility)" Storyboard.TargetName="imgLoading">
+                <DiscreteObjectKeyFrame KeyTime="0" Value="{x:Static Visibility.Visible}"/>
+            </ObjectAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.X)" Storyboard.TargetName="imgLoading">
+                <EasingDoubleKeyFrame KeyTime="0" Value="314"/>
+            </DoubleAnimationUsingKeyFrames>
+            <DoubleAnimationUsingKeyFrames Storyboard.TargetProperty="(UIElement.RenderTransform).(TransformGroup.Children)[3].(TranslateTransform.Y)" Storyboard.TargetName="imgLoading">
+                <EasingDoubleKeyFrame KeyTime="0" Value="-6"/>
+            </DoubleAnimationUsingKeyFrames>
+        </Storyboard>
+        <Style x:Key="FocusVisual">
+            <Setter Property="Control.Template">
+                <Setter.Value>
+                    <ControlTemplate>
+                        <Rectangle Margin="2" SnapsToDevicePixels="true" Stroke="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}" StrokeThickness="1" StrokeDashArray="1 2"/>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+        <SolidColorBrush x:Key="Button.Static.Background" Color="#FFDDDDDD"/>
+        <SolidColorBrush x:Key="Button.Static.Border" Color="#FF707070"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Background" Color="#FFBEE6FD"/>
+        <SolidColorBrush x:Key="Button.MouseOver.Border" Color="#FF3C7FB1"/>
+        <SolidColorBrush x:Key="Button.Pressed.Background" Color="#FFC4E5F6"/>
+        <SolidColorBrush x:Key="Button.Pressed.Border" Color="#FF2C628B"/>
+        <SolidColorBrush x:Key="Button.Disabled.Background" Color="#FFF4F4F4"/>
+        <SolidColorBrush x:Key="Button.Disabled.Border" Color="#FFADB2B5"/>
+        <SolidColorBrush x:Key="Button.Disabled.Foreground" Color="#FF838383"/>
+        <Style x:Key="ButtonStyleLogin" TargetType="{x:Type Button}">
+            <Setter Property="FocusVisualStyle" Value="{StaticResource FocusVisual}"/>
+            <Setter Property="Background" Value="{StaticResource Button.Static.Background}"/>
+            <Setter Property="BorderBrush" Value="{StaticResource Button.Static.Border}"/>
+            <Setter Property="Foreground" Value="{DynamicResource {x:Static SystemColors.ControlTextBrushKey}}"/>
+            <Setter Property="BorderThickness" Value="1"/>
+            <Setter Property="HorizontalContentAlignment" Value="Center"/>
+            <Setter Property="VerticalContentAlignment" Value="Center"/>
+            <Setter Property="Padding" Value="1"/>
+            <Setter Property="Template">
+                <Setter.Value>
+                    <ControlTemplate TargetType="{x:Type Button}">
+                        <Border x:Name="border" BorderBrush="{TemplateBinding BorderBrush}" BorderThickness="{TemplateBinding BorderThickness}" Background="{TemplateBinding Background}" SnapsToDevicePixels="true">
+                            <VisualStateManager.VisualStateGroups>
+                                <VisualStateGroup x:Name="CommonStates">
+                                    <VisualState x:Name="Normal"/>
+                                    <VisualState x:Name="MouseOver">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF9C3F3A"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF1D2023"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Pressed">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF70110B"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="White"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                    <VisualState x:Name="Disabled">
+                                        <Storyboard>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Panel.Background)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="#FF70110B"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                            <ObjectAnimationUsingKeyFrames Storyboard.TargetProperty="(Border.BorderBrush)" Storyboard.TargetName="border">
+                                                <DiscreteObjectKeyFrame KeyTime="0">
+                                                    <DiscreteObjectKeyFrame.Value>
+                                                        <SolidColorBrush Color="White"/>
+                                                    </DiscreteObjectKeyFrame.Value>
+                                                </DiscreteObjectKeyFrame>
+                                            </ObjectAnimationUsingKeyFrames>
+                                        </Storyboard>
+                                    </VisualState>
+                                </VisualStateGroup>
+                            </VisualStateManager.VisualStateGroups>
+                            <ContentPresenter x:Name="contentPresenter" Focusable="False" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" Margin="{TemplateBinding Padding}" RecognizesAccessKey="True" SnapsToDevicePixels="{TemplateBinding SnapsToDevicePixels}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}"/>
+                        </Border>
+                        <ControlTemplate.Triggers>
+                            <Trigger Property="IsDefaulted" Value="true">
+                                <Setter Property="BorderBrush" TargetName="border" Value="{DynamicResource {x:Static SystemColors.HighlightBrushKey}}"/>
+                            </Trigger>
+                            <Trigger Property="IsMouseOver" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.MouseOver.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.MouseOver.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsPressed" Value="true">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Pressed.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Pressed.Border}"/>
+                            </Trigger>
+                            <Trigger Property="IsEnabled" Value="false">
+                                <Setter Property="Background" TargetName="border" Value="{StaticResource Button.Disabled.Background}"/>
+                                <Setter Property="BorderBrush" TargetName="border" Value="{StaticResource Button.Disabled.Border}"/>
+                                <Setter Property="TextElement.Foreground" TargetName="contentPresenter" Value="{StaticResource Button.Disabled.Foreground}"/>
+                            </Trigger>
+                        </ControlTemplate.Triggers>
+                    </ControlTemplate>
+                </Setter.Value>
+            </Setter>
+        </Style>
+    </Window.Resources>
+
+
+
+
+    <Grid Background="#FF272B2E">
+
+        <Grid x:Name="gridLogin" Margin="0,208.509,0,10.5" HorizontalAlignment="Center" Width="568" Height="341.991" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="19*"/>
+                <ColumnDefinition Width="90*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tb_usuario" Height="31" Margin="-28.955,40.01,73.706,0" TextWrapping="Wrap" VerticalAlignment="Top" KeyUp="tb_usuario_KeyUp" Grid.Column="1" Background="{x:Null}" Foreground="White" FontSize="18"/>
+            <PasswordBox x:Name="tb_senha" Margin="-28.955,101.97,73.706,0" Grid.Column="1" Height="31" VerticalAlignment="Top" Background="{x:Null}" Foreground="White" d:LayoutOverrides="VerticalAlignment" FontSize="18"/>
+            <Label x:Name="label2" Content="Senha" HorizontalAlignment="Left" Margin="-19.007,76.01,0,0" VerticalAlignment="Top" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" Foreground="White"/>
+            <Label x:Name="label2_Copy" Content="Usuário" HorizontalAlignment="Left" Margin="-19.007,14.05,0,0" VerticalAlignment="Top" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" Foreground="White"/>
+            <Button x:Name="btnFechar" Content="Fechar" Margin="0,0,101.039,107.04" VerticalAlignment="Bottom" VerticalContentAlignment="Center" Click="btnFechar_Click" Grid.Column="1" Foreground="White" Background="#FF484B5A"/>
+            <Button x:Name="button_Copy1" Content="Entrar" Margin="-28.955,162.991,73.706,132" VerticalContentAlignment="Center" Click="button_Copy1_Click" Grid.Column="1" Background="#FFE5625A" FontSize="20" Foreground="White" FontFamily="Tahoma" Style="{DynamicResource ButtonStyleLogin}"/>
+            <Image x:Name="image1" HorizontalAlignment="Right" Margin="0,46.01,81.039,0" Width="20" Source="user1.png" Height="25" VerticalAlignment="Top" Opacity="0.3" Grid.Column="1"/>
+            <Image x:Name="image1_Copy" HorizontalAlignment="Right" Margin="0,108.333,81.039,0" Width="24" Source="lock-24-512.png" Opacity="0.3" Grid.Column="1" Height="19" VerticalAlignment="Top"/>
+
+        </Grid>
+        <Label x:Name="label1" Content="Sistema de Automação Industrial - NBL System - Licenciado para INNOVA PPF. COM. E SERV. EIRELLI-ME" HorizontalAlignment="Center" VerticalAlignment="Bottom" FontSize="8" Width="568" HorizontalContentAlignment="Center" Grid.ColumnSpan="4" Height="21" Foreground="White"/>
+        <Grid x:Name="gridRegister" Margin="0,208.509,0,10.5" HorizontalAlignment="Center" Width="568" Height="341.991" VerticalAlignment="Center" RenderTransformOrigin="0.5,0.5" Visibility="Hidden" >
+            <Grid.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Grid.RenderTransform>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="13*"/>
+                <ColumnDefinition Width="129*"/>
+            </Grid.ColumnDefinitions>
+            <TextBox x:Name="tb_nomeCadastro" Height="30.5" Margin="10,35.04,83,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" Background="{x:Null}" FontSize="18" Foreground="White"/>
+            <TextBox x:Name="tb_usuarioCadastro" Height="30.5" Margin="10,96.5,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Grid.Column="1" HorizontalAlignment="Left" Width="200" Background="{x:Null}" FontSize="18" Foreground="White"/>
+            <PasswordBox x:Name="tb_senhaCadastro" HorizontalAlignment="Left" Margin="233,96.5,0,0" VerticalAlignment="Top" Width="200" Height="30.5" Grid.Column="1" Background="{x:Null}" FontSize="18" Foreground="White"/>
+            <Custom:MaskedTextBox HorizontalAlignment="Left" Margin="10,157.96,0,153.531" Mask="000.000.000-00" x:Name="tb_cpfCadastro" Width="200" Grid.Column="1" d:LayoutOverrides="HorizontalAlignment" Background="{x:Null}" FontSize="18" Foreground="White"/>
+            <ComboBox x:Name="cb_permissaoCadastro" Margin="233,157.96,83,0" VerticalAlignment="Top" Grid.Column="1" Height="30.5" Background="{x:Null}" BorderBrush="{x:Null}" Foreground="Black" FontSize="18">
+                <ComboBoxItem IsEnabled="false" Content="Administrador"/>
+                <ComboBoxItem Content="Usuário"/>
+                <ComboBoxItem Content="Visitante"/>
+            </ComboBox>
+            <Button x:Name="btnCadastrarNovoUser" Content="Cadastrar" Margin="10,210.451,83,91.009" Grid.Column="1" Background="#FFE5625A" FontSize="20" Foreground="White" Click="btnCadastrarNovoUser_Click" BorderBrush="{x:Null}" Style="{DynamicResource ButtonStyleLogin}"/>
+            <Label x:Name="label2_Copy1" Content="Nome" Margin="10,9.08,0,0" VerticalAlignment="Top" RenderTransformOrigin="0.535,0.268" Grid.Column="1" HorizontalAlignment="Left" Foreground="White"/>
+            <Label x:Name="label2_Copy2" Content="Usuário" Margin="10,70.54,0,0" Grid.Column="1" HorizontalAlignment="Left" VerticalAlignment="Top" Foreground="White"/>
+            <Label x:Name="label2_Copy3" Content="Senha" Margin="233,70.54,238.063,0" VerticalAlignment="Top" Grid.Column="1" d:LayoutOverrides="Width" Foreground="White"/>
+            <Label x:Name="label2_Copy4" Content="CPF" Margin="10,132,0,136.54" d:LayoutOverrides="Height" Grid.Column="1" HorizontalAlignment="Left" Foreground="White"/>
+            <Label x:Name="label2_Copy5" Content="Permissão" Margin="233,132,217.106,0" VerticalAlignment="Top" d:LayoutOverrides="Width" Grid.Column="1" Foreground="White"/>
+            <Button x:Name="btnCadFacebook" Content="Facebook" Grid.Column="1" Margin="47,0,127,62.716" VerticalAlignment="Bottom" Height="23.293" BorderBrush="{x:Null}" Background="#FFD4D4D4" Click="btnCadFacebook_Click"/>
+            <Image x:Name="image2" Grid.Column="1" HorizontalAlignment="Left" Height="17.96" Margin="164.916,0,0,65.424" VerticalAlignment="Bottom" Width="21.5" Source="Facebook.png"/>
+
+
+        </Grid>
+        <Grid x:Name="GridTop" Height="203.509" VerticalAlignment="Top" Background="#FF1F2225">
+            <Image x:Name="image" Margin="10,10,0,107.049" Source="LOGO-NBL.png" HorizontalAlignment="Left" Width="145"/>
+            <TextBlock x:Name="lblEntrar" Margin="0,42.5,191.71,0" TextWrapping="Wrap" Text="Entrar" VerticalAlignment="Top" Foreground="White" Height="30.96" FontSize="24" HorizontalAlignment="Right" Width="68.29" Cursor="Hand" MouseLeftButtonDown="lblEntrar_MouseLeftButtonDown"/>
+            <TextBlock x:Name="lblCadastrar" Margin="0,42.5,59.71,0" TextWrapping="Wrap" Text="Registrar" VerticalAlignment="Top" Foreground="White" Height="30.96" FontSize="24" HorizontalAlignment="Right" Width="104.29" Cursor="Hand" MouseLeftButtonDown="lblCadastrar_MouseLeftButtonDown"/>
+            <Separator x:Name="separator" Margin="0,73.46,191.71,0" HorizontalAlignment="Right" Width="72.623" FontSize="20" BorderThickness="0" Height="23" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Background="#FFE5625A" Visibility="Hidden">
+                <Separator.RenderTransform>
+                    <TransformGroup>
+                        <ScaleTransform ScaleY="2.95"/>
+                        <SkewTransform/>
+                        <RotateTransform/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </Separator.RenderTransform>
+            </Separator>
+        </Grid>
+        <Button x:Name="btnLogin" HorizontalAlignment="Right" Margin="0,273.05,27,267.99" Width="75" d:LayoutOverrides="Height" Visibility="Hidden" Click="btnLogin_Click"/>
+        <Grid x:Name="gridNavegadorFacebook" Margin="0,257,-6,0" Visibility="Hidden">
+            <WebBrowser x:Name="WBrowser" Margin="0,0,6.667,0" Navigated="WebBrowser_Navigated"/>
+        </Grid>
+        <Image gif:ImageBehavior.AnimatedSource="/NBLsystem;component/Users/Login/loadgif.gif" x:Name="imgLoading" Margin="24,0,0,145"  RenderTransformOrigin="0.5,0.5" Height="27.5" VerticalAlignment="Bottom" HorizontalAlignment="Left" Width="31" Visibility="Hidden">
+            <Image.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </Image.RenderTransform>
+        </Image>
+
+    </Grid>
+
+
+</Window>
